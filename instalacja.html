@@ -1,0 +1,49 @@
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<script>
+    $(function () {
+        $('.przycisk_instalacja_pokaz').click(function () {
+            new TypeIt(".obiekt", {
+                strings: "Moje pierwsze zastosowanie TypeIT",
+                speed: 140,
+                loop: true
+            }).go()
+            $('.przycisk_instalacja_pokaz').hide();
+        });
+    });
+
+</script>
+<div id="content" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-12 text-center">
+        <h1> Instalacja pluginu TypeIT</h1>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h4>1. Załaduj plugin poprzez znacznik &lt; script&gt; wskazując na kod ze strony internetowej</h4>
+            <pre class="prettyprint br-10">
+&lt;script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js">&lt;/script></pre>
+            <h4>lub <a href="https://github.com/alexmacarthur/typeit/blob/master/dist/typeit.min.js">pobierz plik </a>
+                    i umieść go w plikach twojego projektu.</h4>
+            <pre class="prettyprint br-10">
+&lt;script src="js/typeit.min.js">&lt;/script></pre>
+            <h4>2. Stwórz obiekt na którym chcesz zastować TypeIt</h4>
+            <pre class="prettyprint br-10">
+&lt;p class="obiekt">&lt;/p></pre>
+            <h4>3. Nadaj pierwsze efekty stworzonemu obiektowi (pamiętaj o znaczniku &lt;script>)</h4>
+            <pre class="prettyprint br-10">
+&lt;script>
+    new TypeIt(".obiekt", {
+        strings: "Moje pierwsze zastosowanie TypeIT",
+        speed: 140,
+        loop: true
+    }).go();
+&lt;/script></pre>
+            <h1 class="obiekt"></h1>
+            <button class="btn btn-primary przycisk_instalacja_pokaz">Pokaż efekt</button>
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+</div>

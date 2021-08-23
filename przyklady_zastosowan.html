@@ -1,0 +1,259 @@
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<script>
+    function get_rand_color()
+    {
+        var color = Math.floor(Math.random() * Math.pow(256, 3)).toString(16);
+        while(color.length < 6) {
+            color = "0" + color;
+        }
+        return "#" + color;
+    }
+    document.getElementById("btn-unfreeze").style.display = "none";
+    $(document).ready(function() {
+        let przyklad1_typeit = new TypeIt("#przyklad1", {
+            strings: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            speed: 75,
+            waitUntilVisible: true,
+            loop: true,
+        }).go();
+        let przyklad2_typeit = new TypeIt("#przyklad2", {
+            strings: ["Ut rhoncus, tellus ut mattis pharetra. ",
+            "Aenean porttitor sem ac neque molestie.",
+            "Maecenas et enim a ligula ultrices posuere."],
+            speed: 75,
+            waitUntilVisible: true,
+        }).go();
+        $('#btn-reset2').click(function () {
+            przyklad2_typeit.reset();
+            przyklad2_typeit.go();
+        });
+        let przyklad3_typeit = new TypeIt("#przyklad3", {
+            speed: 100,
+            waitUntilVisible: true,
+        })
+            .type("Przyy")
+            .delete(1)
+            .type("kład pokazujjaący")
+            .move(-3)
+            .delete(2)
+            .move("END")
+            .type(" efekt używamnia")
+            .pause(200)
+            .move(-3)
+            .delete(1)
+            .move("END")
+            .type(" przycisku beckspace.")
+            .pause(400)
+            .move(-8)
+            .delete(1)
+            .type('a')
+            .move("END")
+            .pause(1000)
+            .go();
+        $('#btn-reset3').click(function () {
+            przyklad3_typeit.reset();
+            przyklad3_typeit.go();
+        });
+        let przyklad4_typeit = new TypeIt("#przyklad4", {
+            strings: "Phasellus id luctus magna. Donec dignissim, ipsum quis vestibulum tristique, felis risus " +
+            "viverra tortor, vel faucibus odio massa at tortor.",
+            speed: 75,
+            waitUntilVisible: true,
+            loop: true,
+        }).go();
+        $('#btn-freeze').click(function () {
+            przyklad4_typeit.freeze();
+            $('#btn-freeze').hide();
+            $('#btn-unfreeze').show();
+        });
+        $('#btn-unfreeze').click(function () {
+            przyklad4_typeit.unfreeze();
+            $('#btn-unfreeze').hide();
+            $('#btn-freeze').show();
+        });
+        let przyklad5_typeit = new TypeIt('#przyklad5', {
+            strings: ["Quisque feugiat ante eu arcu mattis porta. Sed a luctus est, vitae iaculis ex. " +
+            "In sit amet nunc dignissim, gravida lectus vitae, molestie sem."],
+            speed: 75,
+            waitUntilVisible: true,
+            afterStep: function(step, instance) {
+                przyklad5_typeit.getElement().style.color = get_rand_color();
+            }
+        }).go();
+        $('#btn-reset5').click(function () {
+            przyklad5_typeit.reset();
+            przyklad5_typeit.go();
+        });
+        let przyklad6_typeit = new TypeIt('#przyklad6', {
+            strings: "Nullam nec elit quis ex laoreet lobortis in a libero. Nunc ipsum dui.",
+            speed: 100,
+            waitUntilVisible: true,
+            cursorChar: '.',
+        }).go();
+        $('#btn-reset6').click(function () {
+            przyklad6_typeit.reset();
+            przyklad6_typeit.go();
+        });
+    });
+</script>
+<div id="content" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1> Przykłady zastosowań TypeIT</h1>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 text-center">
+            <h2>1. Zapętlanie prostego efektu</h2>
+            <span class="span_przyklad" id="przyklad1"></span>
+        </div>
+        <div class="col-md-4">
+            <pre class="prettyprint br-10">
+new TypeIt("#przyklad1", {
+    strings: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    speed: 75,
+    waitUntilVisible: true,
+    loop: true,
+}).go();</pre>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 text-center">
+            <h2>2. Kilka tekstów</h2>
+            <span class="span_przyklad" id="przyklad2"></span>
+            <br>
+            <button class="btn btn-primary" id="btn-reset2">Reset</button>
+        </div>
+        <div class="col-md-4">
+            <pre class="prettyprint br-10">
+new TypeIt("#przyklad2", {
+    strings: ["Ut rhoncus, tellus ut mattis pharetra. ",
+        "Aenean porttitor sem ac neque molestie.",
+        "Maecenas et enim a ligula ultrices posuere."],
+    speed: 75,
+    waitUntilVisible: true,
+}).go();</pre>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 text-center">
+            <h2>3. Symulowanie używania backspace</h2>
+            <span class="span_przyklad" id="przyklad3"></span>
+            <br>
+            <button class="btn btn-primary" id="btn-reset3">Reset</button>
+        </div>
+        <div class="col-md-4">
+            <pre class="prettyprint br-10">
+new TypeIt("#przyklad3", {
+    speed: 100,
+    waitUntilVisible: true,
+})
+    .type("Przyy")
+    .delete(1)
+    .type("kład pokazujjaący")
+    .move(-3)
+    .delete(2)
+    .move("END")
+    .type(" efekt używamnia")
+    .pause(200)
+    .move(-3)
+    .delete(1)
+    .move("END")
+    .type(" przycisku beckspace.")
+    .pause(400)
+    .move(-8)
+    .delete(1)
+    .type('a')
+    .move("END")
+    .go();
+});
+</pre>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 text-center">
+            <h2>4. Pauzowanie i wznawianie animacji</h2>
+            <span class="span_przyklad" id="przyklad4"></span>
+            <br>
+            <button class="btn btn-primary" id="btn-freeze">Pauza</button>
+            <button class="btn btn-primary" id="btn-unfreeze">Wznów</button>
+        </div>
+        <div class="col-md-4">
+            <pre class="prettyprint br-10">
+let przyklad4_typeit = new TypeIt("#przyklad4", {
+    strings: "Phasellus id luctus magna. Donec dignissim, ipsum quis vestibulum tristique, felis risus " +
+    "viverra tortor, vel faucibus odio massa at tortor.",
+    speed: 75,
+    waitUntilVisible: true,
+    loop: true,
+}).go();
+$('#btn-freeze').click(function () {
+    przyklad4_typeit.freeze();
+    $('#btn-freeze').hide();
+    $('#btn-unfreeze').show();
+});
+$('#btn-unfreeze').click(function () {
+    przyklad4_typeit.unfreeze();
+    $('#btn-unfreeze').hide();
+    $('#btn-freeze').show();
+});</pre>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 text-center">
+            <h2>5. Kolorowy tekst</h2>
+            <span class="span_przyklad" id="przyklad5"></span>
+            <br>
+            <button class="btn btn-primary" id="btn-reset5">Reset</button>
+        </div>
+        <div class="col-md-4">
+            <pre class="prettyprint br-10">
+let przyklad5_typeit = new TypeIt('#przyklad5', {
+    strings: ["Quisque feugiat ante eu arcu mattis porta. Sed a luctus est, vitae iaculis ex. " +
+        "In sit amet nunc dignissim, gravida lectus vitae, molestie sem."],
+    speed: 75,
+    waitUntilVisible: true,
+    afterStep: function(step, instance) {
+        przyklad5_typeit.getElement().style.color = get_rand_color();
+    }
+}).go();
+function get_rand_color()
+{
+    var color = Math.floor(Math.random() * Math.pow(256, 3)).toString(16);
+    while(color.length < 6) {
+        color = "0" + color;
+    }
+    return "#" + color;
+}</pre>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 text-center">
+            <h2>6. Zmiana wyglądu kursora</h2>
+            <span class="span_przyklad" id="przyklad6"></span>
+            <br>
+            <button class="btn btn-primary" id="btn-reset6">Reset</button>
+        </div>
+        <div class="col-md-4">
+            <pre class="prettyprint br-10">
+new TypeIt('#przyklad6', {
+    strings: "Nullam nec elit quis ex laoreet lobortis in a libero. Nunc ipsum dui.",
+    speed: 100,
+    waitUntilVisible: true,
+    cursorChar: '.',
+}).go();</pre>
+        </div>
+    </div>
+
+</div>

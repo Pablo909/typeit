@@ -1,0 +1,77 @@
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+<div id="content" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1 id="header" class="text-center"></h1>
+            <script>
+                new TypeIt("#header", {
+                    lifeLike: true,
+                    speed: 100,
+                })
+                    .type("Witaj na stronie poświęcopmej")
+                    .move(-2)
+                    .delete(2)
+                    .type('n')
+                    .move('END')
+                    .type(" pluginowi JS TypeIt.")
+                    .go();
+            </script>
+        </div>
+    </div>
+    <div class="row delayedText"  style="margin-top: 50px">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <p> <strong>TypeIt</strong> jest narzędziem do tworzenia efektu pisania tekstu w czasie rzeczywistym.
+                Pozwala na zastosowanie zaawansowanych efektów takich jak szybkość pisania, usuwanie znaków lub
+                wyświetlanie kursora. </p>
+            <p> Autorem TypeIt jest Alex MacArthur, a kod źródłowy umieścił na platformie
+                <a href="https://github.com/alexmacarthur/typeit">Github</a>. Pluginu można używać bez żadnych opłat
+                przy projektach osobistych oraz open source. Aby wykorzystać TypeIt w celach komercyjnych, należy
+                <a href="https://typeitjs.com/licenses">zakupić licencję</a>.</p>
+            <p> Jeśli chcesz zapoznać się z instalacją oraz przykładami stosowania tego pluginu, skorzystaj z nawigacji
+                znajdującej się na górze strony.</p>
+            <div class="row" style="margin-top: 30px">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                        <pre class="prettyprint br-10">
+new TypeIt("#header", {
+    lifeLike: true,
+    speed: 100,
+    })
+    .type("Witaj na stronie poświęcopmej")
+    .move(-2)
+    .delete(2)
+    .type('n')
+    .move('END')
+    .type(" pluginowi JS TypeIt.")
+    .go();</pre>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <aside>
+                <section class="zasoby">
+                    <h3 class="bold">Przydatne linki:</h3>
+                    <ul>
+                        <li><a href="http://typeitjs.com/" >TypeIt </a></li>
+                        <li><a href="http://wmii.uwm.edu.pl/">Wydział Matematyki i Informatyki </a></li>
+                        <li><a href="http://orfi.uwm.edu.pl/~s150788/projekt1/">Projekt 1 </a></li>
+                        <li><a href="http://orfi.uwm.edu.pl/~s150788/projekt2/">Projekt 2 - Bootstrap</a></li>
+                        <li><a href="http://orfi.uwm.edu.pl/~s150788/projekt3/index.php/Crud_controller/c_select">Projekt 3 - CRUD CI </a></li>
+                    </ul>
+                    <h3 class="bold">Kontakt: </h3>
+                    <ul>
+                        <li><a href="mailto:pawel.bronk@student.uwm.edu.pl" >pawel.bronk@student.uwm.edu.pl </a></li>
+                        <li class="bold">Telefon: 111 222 333</li>
+                    </ul>
+                </section>
+                <div class="media_spolecznosciowe">
+                    <span class="instagram"><a href="https://www.instagram.com/?hl=pl">Instagram</a></span>
+                    <span class="twitter"><a href="https://twitter.com/">Twitter</a></span>
+                    <span class="facebook"><a href="https://www.facebook.com/">Facebook</a></span>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>

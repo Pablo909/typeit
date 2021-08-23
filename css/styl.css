@@ -1,0 +1,53 @@
+h1{font-size: 72px;}
+h2{font-size: 32px;}
+.span_przyklad{font-size: 24px}
+.br-10{border-radius: 10px}
+html{
+    position: relative;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+body {
+    margin-bottom: 60px;
+    background-color: #cccccc;
+}
+.stopka{
+    position: absolute;
+    bottom: 0;
+}
+.nav1{
+    font-size: 25px;
+    font-weight: bold;
+}
+.media_spolecznosciowe a{
+    float: right;
+    margin-right: 8px;
+    border-radius: 4px;
+    text-indent: -10000px;
+    margin-bottom: 10px;
+    background: url(../img/spritew.png) no-repeat;
+}
+.facebook a {width: 20px; height: 20px; background-position: 0 0;}
+.instagram a {width: 20px; height: 20px; background-position: -25px 0;}
+.twitter a {width: 20px; height: 20px; background-position: -50px 0;}
+.media_spolecznosciowe a:hover{transform: scale(1.5);}
+aside ul {
+    padding: 5px;
+    font-size: 18px;
+    list-style-type: none;
+    line-height: 20px;
+}
+.zasoby a[href^='http://'] {
+    background: url(../img/globe.png) center right no-repeat;
+    padding-right: 18px;
+}
+.zasoby a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+a[href^='mailto:'] {
+    color: #242424;
+    border: none;
+    background: url(../img/email.gif) no-repeat left center;
+    padding-left: 20px;
+    margin-left: 10px;
+}
